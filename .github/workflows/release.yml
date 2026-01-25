@@ -22,23 +22,16 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Setup Node.js for npm
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
       
-      - name: Configure npm authentication
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-          //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
-          EOF
-      
-      - name: Verify npm authentication
-        run: npm whoami
-      
       - name: Install dependencies
         run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       
       - name: Build packages
         run: |
@@ -67,6 +60,7 @@ jobs:
           commit: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       
       - name: Setup Node for GitHub Packages
         if: steps.changesets.outputs.published == 'true'
@@ -88,7 +82,6 @@ jobs:
             echo "📦 Publishing $pkg_name@$pkg_version to GitHub Packages..."
             cd "$dir"
             
-            # Check if package has dist folder (built packages only)
             if [ -d "dist" ]; then
               npm publish --registry=https://npm.pkg.github.com --ignore-scripts || {
                 echo "⚠️  Failed to publish $pkg_name to GitHub Packages (may already exist)"
