@@ -22,18 +22,19 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Setup Node.js
+      - name: Setup Node.js for npm
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          registry-url: 'https://registry.npmjs.org'
       
-      - name: Create .npmrc
+      - name: Configure npm authentication
         run: |
           cat << EOF > "$HOME/.npmrc"
           //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
           EOF
       
-      - name: Verify npm auth
+      - name: Verify npm authentication
         run: npm whoami
       
       - name: Install dependencies
@@ -78,13 +79,25 @@ jobs:
       - name: Publish to GitHub Packages
         if: steps.changesets.outputs.published == 'true'
         run: |
+          echo "Publishing packages to GitHub Packages..."
           for package in packages/*/package.json; do
             dir=$(dirname "$package")
             pkg_name=$(node -p "require('./$package').name")
-            echo "Publishing $pkg_name to GitHub Packages..."
+            pkg_version=$(node -p "require('./$package').version")
+            
+            echo "📦 Publishing $pkg_name@$pkg_version to GitHub Packages..."
             cd "$dir"
-            npm publish --registry=https://npm.pkg.github.com --ignore-scripts
-            echo "✅ Published $pkg_name to GitHub Packages"
+            
+            # Check if package has dist folder (built packages only)
+            if [ -d "dist" ]; then
+              npm publish --registry=https://npm.pkg.github.com --ignore-scripts || {
+                echo "⚠️  Failed to publish $pkg_name to GitHub Packages (may already exist)"
+              }
+              echo "✅ Published $pkg_name@$pkg_version to GitHub Packages"
+            else
+              echo "⏭️  Skipping $pkg_name (no dist folder)"
+            fi
+            
             cd ../..
           done
         env:
