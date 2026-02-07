@@ -1,6 +1,6 @@
 {
   "name": "@useverse/profanity-guard",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A flexible, production-ready TypeScript library for content moderation and profanity filtering with multiple severity levels and obfuscation detection",
   "license": "ISC",
   "author": "fabiconcept",
