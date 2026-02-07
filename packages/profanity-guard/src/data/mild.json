@@ -127,14 +127,6 @@
     ]
   },
   {
-    "word": "git",
-    "severity": "mild",
-    "alternatives": [
-      "fool"
-    ],
-    "variants": []
-  },
-  {
     "word": "bloody",
     "severity": "mild",
     "alternatives": [
@@ -210,17 +202,6 @@
     ],
     "variants": [
       "bussing"
-    ]
-  },
-  {
-    "word": "cap",
-    "severity": "mild",
-    "alternatives": [
-      "lie"
-    ],
-    "variants": [
-      "no cap",
-      "nocap"
     ]
   },
   {
@@ -494,14 +475,6 @@
     "variants": [
       "sweat",
       "sweats"
-    ]
-  },
-  {
-    "word": "based",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "b@sed"
     ]
   },
   {
@@ -1529,15 +1502,6 @@
     ]
   },
   {
-    "word": "queen",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "qu33n",
-      "kween"
-    ]
-  },
-  {
     "word": "zaddy",
     "severity": "mild",
     "alternatives": [],
@@ -1555,15 +1519,6 @@
     ]
   },
   {
-    "word": "ate",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "ate that",
-      "ate and left no crumbs"
-    ]
-  },
-  {
     "word": "period",
     "severity": "mild",
     "alternatives": [],
@@ -1573,46 +1528,11 @@
     ]
   },
   {
-    "word": "wig",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "wig flew",
-      "wig snatched"
-    ]
-  },
-  {
-    "word": "tea",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "t3a",
-      "spill the tea"
-    ]
-  },
-  {
-    "word": "shade",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "throwing shade"
-    ]
-  },
-  {
     "word": "dragged",
     "severity": "mild",
     "alternatives": [],
     "variants": [
       "drag"
-    ]
-  },
-  {
-    "word": "read",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "reading",
-      "read to filth"
     ]
   },
   {
@@ -1699,16 +1619,6 @@
     ]
   },
   {
-    "word": "cancel",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "c@ncel",
-      "cancelled",
-      "canceled"
-    ]
-  },
-  {
     "word": "ratio",
     "severity": "mild",
     "alternatives": [],
@@ -1748,31 +1658,6 @@
     "alternatives": [],
     "variants": [
       "differentbreed"
-    ]
-  },
-  {
-    "word": "him",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "he's him",
-      "let him cook"
-    ]
-  },
-  {
-    "word": "her",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "she's her"
-    ]
-  },
-  {
-    "word": "they",
-    "severity": "mild",
-    "alternatives": [],
-    "variants": [
-      "they're them"
     ]
   },
   {

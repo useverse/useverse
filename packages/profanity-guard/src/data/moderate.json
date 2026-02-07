@@ -1349,14 +1349,6 @@
     ]
   },
   {
-    "word": "banana",
-    "severity": "moderate",
-    "alternatives": [],
-    "variants": [
-      "b@nana"
-    ]
-  },
-  {
     "word": "twinkie",
     "severity": "moderate",
     "alternatives": [],
@@ -1370,14 +1362,6 @@
     "alternatives": [],
     "variants": [
       "0reo"
-    ]
-  },
-  {
-    "word": "coconut",
-    "severity": "moderate",
-    "alternatives": [],
-    "variants": [
-      "c0conut"
     ]
   },
   {
@@ -1402,15 +1386,6 @@
     "alternatives": [],
     "variants": [
       "kr@ut"
-    ]
-  },
-  {
-    "word": "frog",
-    "severity": "moderate",
-    "alternatives": [],
-    "variants": [
-      "fr0g",
-      "frogs"
     ]
   },
   {
@@ -1478,14 +1453,6 @@
     ]
   },
   {
-    "word": "invalid",
-    "severity": "moderate",
-    "alternatives": [],
-    "variants": [
-      "1nvalid"
-    ]
-  },
-  {
     "word": "autist",
     "severity": "moderate",
     "alternatives": [],
@@ -1516,14 +1483,6 @@
     "alternatives": [],
     "variants": [
       "ass burgers"
-    ]
-  },
-  {
-    "word": "helmet",
-    "severity": "moderate",
-    "alternatives": [],
-    "variants": [
-      "h3lmet"
     ]
   },
   {
@@ -1720,23 +1679,6 @@
     "alternatives": [],
     "variants": [
       "afbb"
-    ]
-  },
-  {
-    "word": "wall",
-    "severity": "moderate",
-    "alternatives": [],
-    "variants": [
-      "the wall",
-      "hit the wall"
-    ]
-  },
-  {
-    "word": "post wall",
-    "severity": "moderate",
-    "alternatives": [],
-    "variants": [
-      "postwall"
     ]
   },
   {
