@@ -241,10 +241,10 @@ import {
   mild_bad_words,
   moderate_bad_words,
   severe_bad_words 
-} from 'nobadword/core/library';
+} from 'profanity-guard/core/library';
 
 // Import only severe words
-const moderator = new NoBadWord();
+const moderator = new ProfanityGuard();
 moderator.clearLibrary(); // Remove defaults
 moderator.importLibrary(severe_bad_words);
 ```
@@ -262,7 +262,7 @@ console.log(`Severe: ${stats.severe}`);
 ### Quick Moderate (One-off Use)
 
 ```typescript
-import { quickModerate, ModerationLevel } from 'nobadword';
+import { quickModerate, ModerationLevel } from 'profanity-guard';
 
 const result = quickModerate("Some text", ModerationLevel.STRICT);
 ```
@@ -271,7 +271,7 @@ const result = quickModerate("Some text", ModerationLevel.STRICT);
 
 ### Obfuscation Detection
 
-NoBadWord automatically detects common character substitutions:
+ProfanityGuard automatically detects common character substitutions:
 
 ```typescript
 moderator.isClean("sh!t");    // false - detects ! as i
@@ -400,7 +400,7 @@ import {
   quickSanitize, 
   quickScore,
   quickValidate 
-} from 'nobadword';
+} from 'profanity-guard';
 
 // Quick checks
 if (quickCheck("Hello world")) {
@@ -420,7 +420,7 @@ const isValid = quickValidate(content, {
 });
 ```
 
-> **Note:** Quick utilities are convenient but less efficient for repeated use. For better performance with multiple operations, create a NoBadWord instance and reuse it.
+> **Note:** Quick utilities are convenient but less efficient for repeated use. For better performance with multiple operations, create a ProfanityGuard instance and reuse it.
 
 ### Match Details
 
@@ -455,15 +455,15 @@ Full TypeScript support with comprehensive type definitions:
 
 ```typescript
 import { 
-  NoBadWord,
+  ProfanityGuard,
   ModerationLevel,
   WordSeverity,
   ModerationResult,
   WordEntry,
   Match
-} from 'nobadword';
+} from 'profanity-guard';
 
-const moderator: NoBadWord = new NoBadWord();
+const moderator: ProfanityGuard = new ProfanityGuard();
 const result: ModerationResult = moderator.moderate("text");
 const entry: WordEntry = {
   word: "example",
@@ -474,11 +474,11 @@ const entry: WordEntry = {
 
 ## 📚 API Reference
 
-### NoBadWord Class
+### ProfanityGuard Class
 
 #### Constructor
 ```typescript
-new NoBadWord(moderationLevel?: ModerationLevel, censorChar?: string)
+new ProfanityGuard(moderationLevel?: ModerationLevel, censorChar?: string)
 ```
 
 #### Core Methods
@@ -580,7 +580,7 @@ new NoBadWord(moderationLevel?: ModerationLevel, censorChar?: string)
 ### Comment Moderation
 ```typescript
 function moderateComment(comment: string): string {
-  const moderator = new NoBadWord(ModerationLevel.MODERATE);
+  const moderator = new ProfanityGuard(ModerationLevel.MODERATE);
   const result = moderator.moderate(comment);
   
   if (!result.isClean) {
@@ -594,7 +594,7 @@ function moderateComment(comment: string): string {
 ### Chat Filter
 ```typescript
 function filterChatMessage(message: string): { allowed: boolean; filtered: string } {
-  const moderator = new NoBadWord(ModerationLevel.STRICT);
+  const moderator = new ProfanityGuard(ModerationLevel.STRICT);
   const result = moderator.moderateSentence(message, true);
   
   return {
@@ -607,7 +607,7 @@ function filterChatMessage(message: string): { allowed: boolean; filtered: strin
 ### User-Generated Content
 ```typescript
 function validateUsername(username: string): { valid: boolean; reason?: string } {
-  const moderator = new NoBadWord(ModerationLevel.STRICT);
+  const moderator = new ProfanityGuard(ModerationLevel.STRICT);
   
   if (!moderator.isClean(username)) {
     return { valid: false, reason: 'Username contains inappropriate language' };
@@ -1284,9 +1284,9 @@ MIT © [Your Name]
 
 ## 🔗 Links
 
-- [Documentation](https://github.com/yourusername/nobadword#readme)
-- [NPM Package](https://www.npmjs.com/package/nobadword)
-- [Issue Tracker](https://github.com/yourusername/nobadword/issues)
+- [Documentation](https://github.com/yourusername/profanity-guard#readme)
+- [NPM Package](https://www.npmjs.com/package/profanity-guard)
+- [Issue Tracker](https://github.com/yourusername/profanity-guard/issues)
 
 ## ⚠️ Disclaimer
 
